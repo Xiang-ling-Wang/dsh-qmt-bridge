@@ -1,6 +1,6 @@
-{
+﻿{
   "name": "dsh-qmt-bridge",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DSH 与 QMT 的内置 Python 文件桥：没有 miniQMT 权限时，用签名订单文件 + QMT 模型交易执行，带急停、价格笼子校验与状态自检。",
   "type": "module",
   "main": "index.js",
@@ -48,3 +48,4 @@
     "url": "https://github.com/Xiang-ling-Wang/dsh-qmt-bridge/issues"
   }
 }
+

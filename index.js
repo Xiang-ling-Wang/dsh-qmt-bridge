@@ -464,7 +464,14 @@ function registerSkill(ctx) {
 }
 
 export function apply(ctx) {
-  ensureDirs();
+  try {
+    ensureDirs();
+  } catch (error) {
+    ctx.logger?.warn?.(
+      "[dsh-qmt-bridge] bridge dir is not writable: " +
+        (error instanceof Error ? error.message : String(error)),
+    );
+  }
   registerSkill(ctx);
   for (const tool of tools) {
     const dispose = ctx.tools.register(tool);
