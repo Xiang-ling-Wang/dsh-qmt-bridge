@@ -148,7 +148,7 @@ git push origin v0.1.1
 4. 收录后用户可：
 
 ```bash
-dsh plugin add dsh-qmt-bridge
+dsh plugin --profile web add dsh-qmt-bridge
 ```
 
 ## 6. 发布后自检

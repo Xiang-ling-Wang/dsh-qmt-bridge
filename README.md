@@ -33,7 +33,7 @@ status = 23, message = 请联系券商开通对应权限
 ## 安装
 
 ```bash
-dsh plugin add dsh-qmt-bridge
+dsh plugin --profile web add dsh-qmt-bridge
 ```
 
 安装后在“设置 → 插件市场”里启用，或按 DSH 的插件管理流程重启 `dsh web`。
@@ -120,7 +120,7 @@ npm test
 2. 添加 `dsh-plugin` topic；
 3. `npm login` 后 `npm publish --access public`；
 4. 在 <https://dsh-plugin.org/zh/submit> 提交；
-5. 用户安装：`dsh plugin add dsh-qmt-bridge`。
+5. 用户安装：`dsh plugin --profile web add dsh-qmt-bridge`。
 
 如果 `dsh-qmt-bridge` 已被占用，改成 `@xiang-ling-wang/dsh-qmt-bridge`，并同步改 `name` 与安装命令。
 
