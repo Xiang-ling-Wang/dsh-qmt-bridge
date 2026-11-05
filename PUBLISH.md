@@ -120,6 +120,26 @@ git push origin v0.1.1
 
 工作流文件在 `.github/workflows/publish.yml`。
 
+## 4c. npm 显示 `0.0.0-stage`
+
+`npm publish` 返回 `+ dsh-qmt-bridge@0.1.0`，但 `npm view` 显示 `latest: 0.0.0-stage`，这是 npm 的 **staged publishing / 新包审核**：
+
+- registry 会先放一个 `0.0.0-stage` 占位版本，描述是
+  `Temporary package placeholder for staged publishing`；
+- 真正的 `0.1.0` 已提交审核，等待 staged release；
+- 此时 `npm view dsh-qmt-bridge@0.1.0` 会 404，属正常。
+
+处理：
+
+1. `npm stage list` 查看有没有可自行批准的 staged release；
+2. 有 stage id：`npm stage approve <stage-id>`；
+3. 没有：说明在 npm 审核队列，等待即可（新账号/新包可能几小时到几天）；
+4. 检查 npm 注册邮箱（含垃圾箱）是否有验证/审核邮件；
+5. 24–48 小时仍未释放，联系 <https://support.npmjs.com>，提供包名、维护者邮箱、发布时间；
+6. 不要反复重发同一个 `0.1.0`，避免版本冲突或重复审核。
+
+只有 `npm view dsh-qmt-bridge version` 返回 `0.1.0` 后，才去插件市场提交。
+
 ## 5. 提交插件市场
 
 1. 打开 <https://dsh-plugin.org/zh/submit>；
