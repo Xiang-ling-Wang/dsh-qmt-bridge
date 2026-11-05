@@ -1,0 +1,6 @@
+# dsh-qmt-bridge bundle patch.
+# Applied when installed via `dsh plugin add dsh-qmt-bridge`.
+# Registers the node-side plugin entry; no client half in v0.1.
+- insert:
+    - id: dsh-qmt-bridge
+      name: dsh-qmt-bridge

@@ -1,0 +1,50 @@
+{
+  "name": "dsh-qmt-bridge",
+  "version": "0.1.0",
+  "description": "DSH 与 QMT 的内置 Python 文件桥：没有 miniQMT 权限时，用签名订单文件 + QMT 模型交易执行，带急停、价格笼子校验与状态自检。",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "skills",
+    "assets",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "qmt",
+    "mini-qmt",
+    "a-share",
+    "quant",
+    "trading",
+    "file-bridge"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "test": "node test/mock.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xiang-ling-Wang/dsh-qmt-bridge.git"
+  },
+  "homepage": "https://github.com/Xiang-ling-Wang/dsh-qmt-bridge#readme",
+  "bugs": {
+    "url": "https://github.com/Xiang-ling-Wang/dsh-qmt-bridge/issues"
+  }
+}
